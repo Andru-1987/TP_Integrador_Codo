@@ -3,17 +3,21 @@
     --linksColor: rgba(149, 147, 145,1);
     --green:rgba(36,150,60,1);
     --softgreen:rgba(150,201,62,255);
+    --lightgrey:gray;
+    --blue:rgba(204,229,255,255);
 }
 
 
-
+html{
+  scroll-behavior: smooth;
+}
 /* Navegador */
 
 .navigator{
     background: var(--colorLyrics);
     display: flex  ;
     flex-flow: column wrap;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
 
@@ -49,7 +53,7 @@
     font-size: large;
 }
 
-a{  
+a{
     color:rgba(149, 147, 145,1);
     text-decoration: none;
 }
@@ -92,7 +96,7 @@ a:hover{
         width: 100%;
 
     }
-    
+
     .links a{
         padding-bottom: 1rem;
         width: 100%;
@@ -103,7 +107,7 @@ a:hover{
 }
 
 
-@media (max-width:500px) 
+@media (max-width:500px)
 {
     .links a{
         padding-bottom: 1rem;
@@ -111,7 +115,7 @@ a:hover{
         text-align: center;
         margin-right: 2rem;
     }
-   
+
 }
 
 
@@ -122,15 +126,15 @@ a:hover{
 /* Media cambio sobre una pantalla menor Navegador */
 
 @media (max-width:880px) {
-  
+
 
     .burger{
         display: flex;
-        justify-content: center;  
-        align-content: center;  
+        justify-content: center;
+        align-content: center;
     }
-    
-    
+
+
     .menu-btn{
         display: flex;
         align-items: center;
@@ -138,10 +142,10 @@ a:hover{
         height: auto;
         cursor: pointer;
         transition: all .5s ease-in-out;
-    
-    
+
+
     }
-    
+
     .menu-btn_burger{
         width: 1.5rem;
         height: .2rem;
@@ -150,9 +154,9 @@ a:hover{
         box-shadow: 0 2px 5px var(--colorLyrics);
         transition: all .5s ease-in-out;
     }
-    
+
     .menu-btn_burger::after,
-    
+
     .menu-btn_burger::before {
         content: " ";
         position: absolute;
@@ -164,23 +168,23 @@ a:hover{
         box-shadow: 0 2px 5px var(--colorLyrics);
         transition: all .5s ease-in-out;
     }
-    
+
     .menu-btn_burger::before{
         transform: translateY(-15px);
-    
+
     }
     .menu-btn_burger::after{
         transform: translateY(15px);
     }
-    
+
     /* animación */
-    
+
     .menu-btn.open .menu-btn_burger{
         transform: translateX(-50px);
         background: transparent;
         box-shadow: none;
     }
-    
+
         .menu-btn.open .menu-btn_burger::before {
             transform: rotate(45deg) translate(35px,-35px);
         }
@@ -188,7 +192,7 @@ a:hover{
             transform: rotate(-45deg) translate(35px,35px);
         }
     }
-    
+
 
 
 
@@ -247,7 +251,7 @@ a:hover{
         padding: 5px;
         overflow-x: scroll;
     }
-    
+
     .boton-ticket{
         justify-content: center;
     }
@@ -355,7 +359,7 @@ section p{
 }
     .boton1,.boton2,.boton3,.boton4{
         display: flex;
-        border-radius: 3px; 
+        border-radius: 3px;
         border: none;
         font-size: .6rem;
         font-weight: bold;
@@ -455,7 +459,7 @@ section p{
         10%{transform: scale(1);}
         100%{transform: scale(1);}
     }
- 
+
 
 
     .texto-octubre{
@@ -510,7 +514,7 @@ form {
 form{
     width: 90%;
 }
-    
+
 }
 
 .nombres-orador{
@@ -561,7 +565,9 @@ footer {
     margin-top: 1rem;
     padding: 0 5rem 0 5rem;
     align-items: center;
-    
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
     border: none;
     height: auto;
     color: white;
@@ -580,13 +586,146 @@ footer {
 
 @media (max-width:880px){
     footer{
-
         flex-direction: column;
         width: 100%;
+        height: 40px;
         justify-content: center;
         font-size: large;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
     }
 }
 
 
 
+
+.hidden {
+  display:none;
+}
+
+#ventaTicket{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedorVenta{
+display: flex;
+flex-direction: column;
+text-align: center;
+box-sizing: content-box;
+width: 710px;
+min-width: 500px;
+height: 100%;
+}
+
+
+
+  .head { font-size: 20px;}
+  .foot{ font-size: 13px;
+        color: var(--lightgrey);
+        }
+
+  .cat{
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    height: 180px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+
+
+    .estudiante,.trainee,.junior{
+      height: 170px;
+      width: 230px;
+      border-radius: 2px;
+      cursor: pointer;
+      }
+
+  .junior{
+    border:1px solid rgba(255,193,7,255);
+  }
+  .trainee{
+    border:1px solid rgba(81,185,201,255);
+  }
+  .estudiante{
+      border:1px solid rgba(15,131,255,255);
+    }
+
+
+.formularioVenta{
+  width: 100%;
+}
+
+.nameCorreo, .nameCant, .nameCat{
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        width: 100%;
+        font-size: .9rem;
+        margin-top: .5rem;
+        padding: .5rem;
+    }
+
+.nameNombre, .nameLast{
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            width: 50%;
+            font-size: .9rem;
+            margin-top: .5rem;
+            padding: .5rem;
+        }
+
+.namesContainer{
+  grid-gap: 4px;
+  display:flex;
+  width: 100%;
+}
+
+
+.tagContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  grid-gap: 4px;
+}
+
+.tags{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+}
+
+.tagLabel{
+  margin-left: .5rem;
+}
+
+
+.btnsTicket{
+  display: flex;
+  margin-top: 15px;
+  grid-gap: 4px;
+
+}
+.borrar,.resumen{
+    background: var(--softgreen) ;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem;
+    color: white;
+    width: 50%;
+}
+
+#totalPagar{
+    background: var(--blue) ;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem;
+    color: white;
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+}
